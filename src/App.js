@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 
-
+let songLength = 546;
 export default class App extends Component {
   constructor() {
     super()
@@ -13,20 +13,24 @@ export default class App extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    let val = this.refs.message.value;
-    let songLength = 546;
-    let output = (val * 60) / songLength;
-
-    if(val < songLength){
-      let remainder = (songLength - val) / 60;
-      output = "Dang! Find " + remainder.toFixed() + " more minutes for one full experience!" ;
-    } 
     
-    if(val > songLength){
-      output = "You can listen to Freebird " + output.toFixed(2) + " times 🤘";
-    } 
+  
+    let door = this.refs.message.value * 60;
 
-    this.setState({value: output});
+    let val = door / songLength;
+
+
+    console.log(val);
+
+    if (songLength < val){
+      val = "You can listen to Freebird " + val.toFixed(2) + " times 🤘";
+    } else if (val < songLength) {
+      val = "NO " + val.toFixed(2) + " times 🤘";
+    }
+
+    
+
+    this.setState({value: val});
 
   }
 
