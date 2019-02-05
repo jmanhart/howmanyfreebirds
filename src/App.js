@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 
 // Import Components
 import FreeBirdForm  from './components/form/index.js';
 
+// Import Styles
+import './App.css';
 
 export default class App extends Component {
   render() {

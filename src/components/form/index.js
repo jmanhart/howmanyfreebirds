@@ -42,12 +42,17 @@ export default class FreeBirdForm extends React.Component {
     
         // Easter Egg - 420
         if (this.refs.message.value == 420) {
-          msg = "Whooa thats hella meta...You can listen to Freebird " + calc.toFixed() + " times."
+          msg = "You can listen to Freebird " + calc.toFixed() + " times."
         }
 
-        // Easter Egg - 420
+        // Easter Egg - 10
         if (this.refs.message.value == 10) {
             msg = "Whooa thats hella meta...You can listen to Freebird " + calc.toFixed() + " time. 🤘"
+        }
+
+        // Easter Egg - Infinity ∞
+        if (this.refs.message.value == "∞") {
+          msg = "TIME IS A FLAT CIRCLE "
         }
     
         console.log(calc);
@@ -55,13 +60,6 @@ export default class FreeBirdForm extends React.Component {
     
       }
     
-
-  handleChange(event) {
-      this.setState({
-          inputField: event.target.value
-      })
-  }
-
   render() {
     return (
         <form
