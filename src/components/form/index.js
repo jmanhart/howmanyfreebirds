@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Importing Styles
 import './styles.css';
 
+// Length of Freebird in seconds
 let songLength = 546;
 
 export default class FreeBirdForm extends React.Component {
@@ -14,8 +15,10 @@ export default class FreeBirdForm extends React.Component {
       }
       handleSubmit(event){
         event.preventDefault();
-    
+
+        // Convert time to seconds
         let timeInSeconds = (this.refs.message.value * 60);
+        // Find the amount of time for number of free birds
         let calc = timeInSeconds / songLength
         let msg;
     
@@ -75,13 +78,3 @@ export default class FreeBirdForm extends React.Component {
     );
   }
 }
-
-
-/*
-<input
-ref="message"
-placeholder="mins"
-onfocus="this.placeholder = ''"
-onSubmit={this.handleSubmit}
-/>
-*/
