@@ -14,5 +14,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prod": "pm2 start ./server.js --name freebird"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
