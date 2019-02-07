@@ -4,6 +4,9 @@ import React from 'react';
 // Importing Styles
 import './styles.css';
 
+// Import Global Stylesheet
+// import '../../App.css'
+
 // Length of Freebird in seconds
 let songLength = 546;
 
@@ -30,24 +33,45 @@ export default class FreeBirdForm extends React.Component {
       // More than one listen
       if (timeInSeconds > songLength) {
         msg = (
-          <span className="base">You could listen to <span className="free-bird">Free Bird</span> {calc.toFixed()}  freaking times</span>
+          <div className="results-content">
+            <img src={'images/happy-01.png'}></img>
+            <span className="base">You could listen to <span className="free-bird">Free Bird</span> {calc.toFixed()}  freakin' times</span>
+          </div>
         )
       } 
   
       // Less than one listen
       if (timeInSeconds < songLength) {
         let remainder = (songLength - timeInSeconds) / 60;
-        msg = "Dang! You need " + remainder.toFixed() + " more minutes to be free as a bird.";
+        msg = (
+          <div className="results-content">
+            <img src={'images/mixed-01.png'}></img>
+            <span className="base">Get serious you need {remainder.toFixed()}  more minutes to be <span className="free-bird"> Free</span> as a bird</span>
+            
+          </div>
+        )
       }
   
-      // Zero time for Freebird
+      // Easter Egg for 0
       if (timeInSeconds == 0) {
-        msg = <h1>You need some more time for that sweet swamp music... </h1>
+        msg = (
+          <div className="results-content">
+            <img src={'images/sad-01.png'}></img>
+            <span className="base">You are making poor Ronnie sad. Find some time in your life to be Free. </span>
+            
+          </div>
+        )
       }
   
       // Easter Egg - 69
       if (this.refs.message.value == 69) {
-        msg = <h1>Giggidy Giggidy 😉...You can listen to Freebird  {calc.toFixed()}  times.</h1>
+        msg = (
+          <div className="results-content">
+            <img src={'images/happy-04.png'}></img>
+            <span className="base">Giggidy Giggidy...You can get down to Freebird {calc.toFixed()} times. </span>
+            
+          </div>
+        )
       }
   
       // Easter Egg - 420
@@ -67,11 +91,16 @@ export default class FreeBirdForm extends React.Component {
 
       // Easter Egg - 1000
       if (this.refs.message.value > 999) {
-        msg = "Whoa you really like Freebird " + calc.toFixed()
+        msg = (
+          <div className="results-content">
+          <img src={'images/happy-02.png'}></img>
+          <span className="base">Look at you living that free life. You could listen to  <span className="free-bird">Free Bird</span> {calc.toFixed()}  freakin' times.</span>
+        </div>
+        )
       }
       
       this.setState({value: msg});
-  
+      console.log(this.refs.message.value);
     }
 
 
@@ -87,20 +116,24 @@ export default class FreeBirdForm extends React.Component {
    
 
   render() {
+    
     return (
         <form
-        onSubmit={this.handleSubmit}>
-        <div>
-        <h1 >How many <strong>free</strong> minutes do you have?</h1>
-            <input
-              ref="message"
-              placeholder="mins"
-              onSubmit={this.handleSubmit}
-              maxlength="5" 
-            />
-            </div>
+          onSubmit={this.handleSubmit}>
 
-            <h1>{this.state.value}</h1>
+          <div className="input-container">
+              <span className="base" style={{ marginBottom: '1em'}}>How many <strong>free</strong> minutes do you have?</span>
+              <input
+                ref="message"
+                placeholder="mins"
+                onSubmit={this.handleSubmit}
+                maxlength="25" 
+              />
+          </div>
+
+          <div className="results-container">
+            {this.state.value}
+          </div>
 
         </form>
    
@@ -122,4 +155,6 @@ export default class FreeBirdForm extends React.Component {
               onClick={this.resetForm}
               > X
             </button>
+
+          <iframe title="America" src="https://giphy.com/embed/ayfwIEB2hvoDm" width="30" height="30" frameBorder="0"  allowFullScreen />
 */

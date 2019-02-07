@@ -6,7 +6,7 @@ body{
 }
 .App {
   text-align: center;
-  height: 99vh;
+  /* height: 99vh; */
   overflow: hidden;
   display: flex;
   /* align-items: center; */
@@ -32,19 +32,6 @@ body{
   font-weight: 300;
 }
 
-h1{
-  font-size: 1em;
-  color: rgba(0,0,0,0.8);
-  font-weight: 300;
-  text-align: left;
-}
 
-form{
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
-
-}
 
 
