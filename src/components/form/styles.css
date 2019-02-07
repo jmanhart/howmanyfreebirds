@@ -11,30 +11,61 @@
     font-size: 1.25em;
   }
   
+  span{
+    font-weight: 300;
+  }
+
+  .base{
+    font-size: 1em;
+    color: rgba(0,0,0,0.8));
+    font-weight: regular;
+  }
+
+  .free-bird{
+    color: rgba(0,0,0,0.8));
+    font-weight: 600;
+    font-size: 1.05em;
+  }
+
+  h1{
+    font-size: 0.5em;
+  }
   
   input {
-    height: 50px;
-    width: 5em;
-    padding-left: 0em;
-    background-color: rgb(148, 29, 44);
+    height: 2em;
+    width: 20em;
+    padding-left: 0.5em;
+    background-color: null;
     border-style: solid;
-    border-width: 0.15em;
-    border-color: white;
-    color: white;
-    font-size: 1.25em;
+    border-top-width: 0.0em;
+    border-right-width: 0.0em;
+    border-bottom-width: 0.0625em;
+    border-left-width: 0.0em;
+    border-color: rgba(0,0,0,0.4);
+    color: rgba(0,0,0,0.6);;
+    font-size: 1em;
     /* border-radius: 0.35em; */
-    margin: 1em 0em;
-    text-align: center;
+    margin: 0.5em 0em 0em 0em;
+    text-align: left;
     font-family: sans-serif;
   }
   
+  input:focus { 
+    border-top-width: 0.0em;
+    border-right-width: 0.0em;
+    border-bottom-width: 0.0825em;
+    border-left-width: 0.0em;
+    outline: none;
+  }
+
   ::placeholder { 
-    color: white;
+    color: rgba(0,0,0,0.8);;
     font-size: 1em;
   }
   
   input:focus::-webkit-input-placeholder {
     opacity: 0;
+
   }
   
   

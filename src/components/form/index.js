@@ -29,7 +29,9 @@ export default class FreeBirdForm extends React.Component {
   
       // More than one listen
       if (timeInSeconds > songLength) {
-        msg = "Great you can listen to Freebird " + calc.toFixed() + " freaking times 🤘";
+        msg = (
+          <span className="base">You could listen to <span className="free-bird">Free Bird</span> {calc.toFixed()}  freaking times</span>
+        )
       } 
   
       // Less than one listen
@@ -40,12 +42,12 @@ export default class FreeBirdForm extends React.Component {
   
       // Zero time for Freebird
       if (timeInSeconds == 0) {
-        msg = "You need to find some time to fly high. "
+        msg = <h1>You need some more time for that sweet swamp music... </h1>
       }
   
       // Easter Egg - 69
       if (this.refs.message.value == 69) {
-        msg = "Giggidy Giggidy 😉...You can listen to Freebird " + calc.toFixed() + " times."
+        msg = <h1>Giggidy Giggidy 😉...You can listen to Freebird  {calc.toFixed()}  times.</h1>
       }
   
       // Easter Egg - 420
@@ -88,14 +90,17 @@ export default class FreeBirdForm extends React.Component {
     return (
         <form
         onSubmit={this.handleSubmit}>
+        <div>
+        <h1 >How many <strong>free</strong> minutes do you have?</h1>
             <input
               ref="message"
               placeholder="mins"
               onSubmit={this.handleSubmit}
               maxlength="5" 
             />
+            </div>
 
-            <h1 className="App-title">{this.state.value}</h1>
+            <h1>{this.state.value}</h1>
 
         </form>
    

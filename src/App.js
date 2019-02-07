@@ -45,7 +45,6 @@ export default class App extends Component {
       <div className="App">
         <div>
         <iframe title="America" src="https://giphy.com/embed/ayfwIEB2hvoDm" width="50" height="50" frameBorder="0"  allowFullScreen />
-          <h1 className="App-title">How many free minutes do you have?</h1>
           <FreeBirdForm  />
         </div>
       </div>
